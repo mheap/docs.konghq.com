@@ -2,7 +2,6 @@
 name: Rate Limiting
 publisher: Kong Inc.
 version: 2.2.x
-
 desc: Rate-limit how many HTTP requests can be made in a period of time
 description: |
   Rate limit how many HTTP requests can be made in a given period of seconds, minutes, hours, days, months, or years.
@@ -13,14 +12,13 @@ description: |
   **Tip:** The [Rate Limiting Advanced](/hub/kong-inc/rate-limiting-advanced/)
     plugin provides the ability to apply
     [multiple limits in sliding or fixed windows](/hub/kong-inc/rate-limiting-advanced/#multi-limits-windows).
-
 type: plugin
 categories:
   - traffic-control
-
 kong_version_compatibility:
   community_edition:
     compatible:
+      - 99.9.x
       - 2.4.x
       - 2.3.x
       - 2.2.x
@@ -53,20 +51,20 @@ kong_version_compatibility:
       - 1.5.x
       - 1.3-x
       - 0.36-x
-
 params:
   name: rate-limiting
   service_id: true
   route_id: true
   consumer_id: true
-  protocols: ['http', 'https']
+  protocols:
+    - http
+    - https
   dbless_compatible: partially
   dbless_explanation: |
     The plugin will run fine with the `local` policy (which doesn't use the database) or
     the `redis` policy (which uses an independent Redis, so it is compatible with DB-less).
 
     The plugin will not work with the `cluster` policy, which requires writes to the database.
-
   config:
     - name: second
       required: semi
@@ -114,7 +112,7 @@ params:
       description: Path to be used if `limit_by` is set to `path`.
     - name: policy
       required: false
-      value_in_examples: "local"
+      value_in_examples: local
       default: '`cluster`'
       datatype: string
       description: |
@@ -173,11 +171,7 @@ params:
       datatype: integer
       description: |
         When using the `redis` policy, this property specifies the Redis database to use.
-  extra:
-    <div class="alert alert-warning">
-        <strong>Note:</strong> At least one limit (`second`, `minute`, `hour`, `day`, `month`, `year`) must be configured. Multiple limits can be configured.
-    </div>
-
+  extra: '<div class="alert alert-warning"> <strong>Note:</strong> At least one limit (`second`, `minute`, `hour`, `day`, `month`, `year`) must be configured. Multiple limits can be configured. </div>'
 ---
 
 ## Headers sent to the client
