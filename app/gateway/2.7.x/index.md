@@ -23,7 +23,7 @@ entire organization
 ## Extending the Kong Gateway
 
 {{site.base_gateway}} is a Lua application running in Nginx. {{site.base_gateway}}
-is distributed along with [OpenResty](https://openresty.org/), which is a bundle
+is distributed along with [OpenResty](https://openresy.org/), which is a bundle
 of modules that extend the [lua-nginx-module](https://github.com/openresty/lua-nginx-module).
 
 This sets the foundations for a modular architecture, where
