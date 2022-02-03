@@ -234,7 +234,7 @@ In particular, right after installation you might want to:
 If you're done testing Kong Gateway and no longer need the containers, you
 can clean them up using the following commands:
 
-```
+```sh
 docker kill kong-gateway
 docker kill kong-database
 docker container rm kong-gateway
@@ -394,16 +394,16 @@ to help you set up and enhance your first Service.
 
 If you use the sample `kong.yml` in this guide, you already have a Service and
 a Route configured. Here are a few more things to check out:
-* [Configure a plugin](/gateway/{{page.kong_version}}/get-started/comprehensive/protect-services)
-* [Secure your services with authentication](/gateway/{{page.kong_version}}/get-started/comprehensive/secure-services)
-* [Load balance traffic across targets](/gateway/{{page.kong_version}}/get-started/comprehensive/load-balancing)
+* [Configure a plugin](/gateway/{{page.kong_version}}/get-started/comprehensive/protect-services/?tab=using-deck-yaml)
+* [Secure your services with authentication](/gateway/{{page.kong_version}}/get-started/comprehensive/secure-services/?tab=using-deck-yaml)
+* [Load balance traffic across targets](/gateway/{{page.kong_version}}/get-started/comprehensive/load-balancing/?tab=using-deck-yaml)
 
 ### Clean up containers
 
 If you're done testing Kong Gateway and no longer need the containers, you
 can clean them up using the following commands:
 
-```
+```sh
 docker kill kong-dbless
 docker container rm kong-dbless
 docker network rm kong-net
