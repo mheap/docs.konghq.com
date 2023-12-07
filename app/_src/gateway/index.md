@@ -8,6 +8,8 @@ konnect_cta_card: true
 
 ## Quick Links
 
+Let's all talk about Kong Gateway and a boobarbaz that doesn't exist
+
 <div class="docs-grid-install max-3">
 
   <a href="#features" class="docs-grid-install-block no-description">
